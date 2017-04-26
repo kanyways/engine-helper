@@ -1,7 +1,7 @@
-<div style="height: 100px;">
-    index
-</div>
+<#assign title="首页"/>
 
-<script>
-    document.title = "首页 | <@s.message "app.name"/>";
-</script>
+<@override name="content">
+新形象
+</@override>
+
+<@extends name="../content-layout.ftl"/>

@@ -13,7 +13,7 @@ body {
 
 /*simpage*/
 .sim-page {
-    width: 1200px;
+    width: 1024px;
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -32,13 +32,13 @@ body {
 /*navbar*/
 #navbar {
     color: #ccc;
-    background: #333;
+    background: #000;
     height: 60px;
 }
 
 #navbar ul {
     list-style: none;
-    width: 1200px;
+    width: 1024px;
     margin: 0 auto;
     padding-left: 0;
 }
@@ -60,12 +60,12 @@ body {
 }
 
 #navbar ul li a:hover {
-    background: #000;
+    background: #333;
 }
 
 #navbar ul li:first-child a {
     font-size: 22px;
-    margin-right: 40px;
+    margin-right: 20px;
     width: 120px;
     color: #fff;
 }
@@ -78,11 +78,11 @@ body {
     right: 0;
     height: 120px;
     color: #ccc;
-    background: #333;
+    background: #000;
 }
 
 #footer div {
-    width: 1200px;
+    width: 1024px;
     margin: 0 auto;
 }
 
