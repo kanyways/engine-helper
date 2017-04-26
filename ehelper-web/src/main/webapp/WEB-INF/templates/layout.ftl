@@ -8,7 +8,7 @@
     <meta name="description" content="引擎助手"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
-    <title>未命名 | 引擎助手</title>
+    <title>未命名 | <@s.message "app.name"/></title>
 
     <link rel="shortcut icon" href="${ctx}/static/app/images/favicon.ico" type="image/x-icon">
 

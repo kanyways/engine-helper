@@ -3,6 +3,7 @@
     <group>
         <!--app-->
         <property name="ehelper.app.name" description="项目名字" defaultValue="引擎助手"/>
+        <property name="ehelper.app.name.en" description="项目名字（英文）" defaultValue="Engine Helper"/>
         <property name="ehelper.app.author" description="项目负责人" defaultValue="康永敢"/>
 
         <!-- redis -->
@@ -41,6 +42,8 @@
         <generate template="applicationContext-datasource.xml" charset="UTF-8"/>
         <generate template="applicationContext-redis.xml" charset="UTF-8"/>
         <generate template="applicationContext-mail.xml" charset="UTF-8"/>
+        <generate template="messages_en_US.properties" charset="UTF-8"/>
+        <generate template="messages_zh_CN.properties" charset="UTF-8"/>
         <generate template="log4j2.xml"/>
     </script>
 </config>
