@@ -20,8 +20,8 @@
         <plugin type="com.shhxzq.fin.ehelper.mapper.plugin.LombokPlugin"/>
 
         <!--jdbc driver-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/ehelper"
-                        userId="root" password="123456"/>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.199.101.18:3306/be"
+                        userId="be" password="be"/>
 
         <!--TableName.java-->
         <javaModelGenerator targetPackage="com.shhxzq.fin.ehelper.model.vo"
