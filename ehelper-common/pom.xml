@@ -89,5 +89,9 @@
             <groupId>com.google.zxing</groupId>
             <artifactId>javase</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+        </dependency>
     </dependencies>
 </project>
