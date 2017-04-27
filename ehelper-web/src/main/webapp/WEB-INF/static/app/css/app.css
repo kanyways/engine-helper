@@ -126,7 +126,7 @@ a {
     border-bottom: 1px solid #ccc;
 }
 
-.form input[type="text"] {
+.form input[type="text"],.form select {
     border: 1px solid #333;
     text-indent: 10px;
     outline: none;
@@ -249,4 +249,27 @@ a {
 
 .table a {
     color: #555;
+}
+
+.trans-list {
+}
+
+.trans-list > .item a {
+    display: inline-block;
+    padding: 20px 40px;
+    width: 160px;
+    height: 190px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    color: #333;
+    text-decoration: none;
+    float: left;
+    margin: 26px;
+}
+
+.trans-list > .item a img {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
 }

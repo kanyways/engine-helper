@@ -5,7 +5,6 @@ import com.shhxzq.fin.ehelper.model.annotation.LogTime;
 import com.shhxzq.fin.ehelper.model.vo.BeEngine;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -20,9 +19,6 @@ public class BeEngineServiceImpl extends BaseService<BeEngine> implements BeEngi
     @Override
     @LogTime
     public List<BeEngine> findAllEngine() {
-        Example example = new Example(BeEngine.class);
-
-        example.setOrderByClause("id desc");
-        return super.selectByExample(example);
+        return super.selectAll();
     }
 }

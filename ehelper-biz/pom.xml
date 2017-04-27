@@ -24,6 +24,10 @@
             <groupId>com.shhxzq.fin</groupId>
             <artifactId>ehelper-dao</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.shhxzq.fin</groupId>
+            <artifactId>ehelper-remote</artifactId>
+        </dependency>
 
         <!-- Spring -->
         <dependency>

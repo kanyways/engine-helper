@@ -20,4 +20,8 @@ public class DateUtil {
     public static String getCurrentFullDateTime() {
         return fullDatetimeFormat.format(new Date());
     }
+
+    public static Date now() {
+        return new Date();
+    }
 }

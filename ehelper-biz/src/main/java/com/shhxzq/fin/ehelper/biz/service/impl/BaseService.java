@@ -133,5 +133,14 @@ public abstract class BaseService<T> {
         return myMapper.updateByPrimaryKeySelective(entity);
     }
 
+    /**
+     * 查询所有记录
+     *
+     * @return
+     */
+    public List<T> selectAll() {
+        return myMapper.selectAll();
+    }
+
 }
 

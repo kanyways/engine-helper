@@ -16,5 +16,7 @@
     <import resource="applicationContext-freemarker.xml"/>
     <!--邮件-->
     <import resource="applicationContext-mail.xml"/>
+    <!--dubbo-->
+    <import resource="applicationContext-dubbo.xml"/>
 
 </beans>
