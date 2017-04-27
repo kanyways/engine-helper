@@ -57,4 +57,14 @@ public class IndexController extends BaseController {
         return getPathRoot() + "/clear";
     }
 
+    /**
+     * 关于
+     *
+     * @return
+     */
+    @RequestMapping(value = "about", method = RequestMethod.GET)
+    public String about() {
+        return getPathRoot() + "/about";
+    }
+
 }

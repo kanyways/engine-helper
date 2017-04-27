@@ -1,7 +1,7 @@
 <#assign title="首页"/>
 
 <@override name="content">
-<a href="#clear/all">清空全部缓存</a>
+<a href="#clear/all" class="underline">清空全部缓存</a>
 
 <div class="result">
     <#if result??>
