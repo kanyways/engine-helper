@@ -6,7 +6,13 @@
         <a href="#resp">
             <img src="${ctx}/static/app/images/resp.png"/>
         </a>
-        <p>在线把Excel中的错误码转成SQL</p>
+        <p>把Excel中的错误码转成SQL</p>
+    </div>
+    <div class="func-item">
+        <a href="#engine">
+            <img src="${ctx}/static/app/images/engine.png"/>
+        </a>
+        <p>启动或停止dev的查询和对账引擎</p>
     </div>
 </div>
 </@override>
