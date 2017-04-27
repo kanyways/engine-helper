@@ -33,10 +33,10 @@
         <SMTP name="Mail" subject="${ehelper.app.name} - 报警通知" to="${ehelper.mail.receiver}" from="${ehelper.mail.username}"
               smtpHost="${ehelper.mail.host}" smtpUsername="${ehelper.mail.username}" smtpPassword="${ehelper.mail.password}" bufferSize="${ehelper.mail.bufferSize}" >
         </SMTP>
-        <Async name="AsyncAll">
+        <Async name="AsyncAll" includeLocation="true">
             <AppenderRef ref="AllFile"/>
         </Async>
-        <Async name="AsyncError">
+        <Async name="AsyncError" includeLocation="true">
             <AppenderRef ref="ErrorFile"/>
             <AppenderRef ref="Mail" />
         </Async>

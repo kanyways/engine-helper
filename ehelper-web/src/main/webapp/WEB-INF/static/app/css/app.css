@@ -21,6 +21,7 @@ a {
     width: 1024px;
     margin: 0 auto;
     margin-top: 20px;
+    padding-bottom: 150px;
 }
 
 .sim-page-loading {
@@ -200,7 +201,34 @@ a {
     color: green;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
 .ele-title {
     font-size: 16px;
     font-weight: 500;
+}
+
+.func-list .func-item {
+    width: 500px;
+    height: 380px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    float: left;
+}
+
+.func-list .func-item img {
+    display: block;
+    width: 480px;
+    height: 280px;
+    margin: 0 auto;
+}
+
+.func-list .func-item p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 30px;
 }
