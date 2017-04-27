@@ -1,8 +1,7 @@
 package com.shhxzq.fin.ehelper.remote;
 
 import com.alibaba.fastjson.JSONObject;
-import com.shhxzq.fin.bankengine.model.RedeemPrivateRequest;
-import com.shhxzq.fin.bankengine.model.RedeemPrivateResponse;
+import com.shhxzq.fin.bankengine.model.*;
 import com.shhxzq.fin.bankengine.service.BankEngineService;
 import com.shhxzq.fin.ehelper.common.DateUtil;
 import com.shhxzq.fin.ehelper.common.GsonUtil;
@@ -13,6 +12,8 @@ import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @author kangyonggan
@@ -41,7 +42,7 @@ public class RemoteBankEngineService {
             return e.getMessage();
         }
 
-        // 设置哪些固定的值
+        // 设置那些固定的值
         request.setMerTranCode("29");
         request.setProductId("000330");
         request.setProductName("引擎助手");
@@ -67,4 +68,38 @@ public class RemoteBankEngineService {
         }
     }
 
+    /**
+     * 申购
+     *
+     * @param commonTransDto
+     * @return
+     */
+    public String pay(CommonTransDto commonTransDto) {
+        PayRequest request = new PayRequest();
+        try {
+            PropertyUtils.copyProperties(request, commonTransDto);
+        } catch (Exception e) {
+            log.warn("申购交易异常", e);
+            return e.getMessage();
+        }
+
+        // 设置那些固定的值
+        request.setSenderIdType("0");//身份证
+        request.setSenderProtocolNo("20161111100004229413");
+        request.setAccpTmd(Accptmd.Mobile.getValue());
+        request.setRefAppNo(DateUtil.getCurrentFullDateTime());
+        request.setMerTranCode("01");
+        request.setCurrWorkingDate(DateUtil.now());
+        request.setAppKind("022");
+
+        try {
+            PayResponse response = bankEngineService.pay(request);
+            log.info("响应信息:{}", response);
+
+            return GsonUtil.format(JSONObject.toJSONString(response));
+        } catch (Exception e) {
+            log.warn("申购交易调用异常", e);
+            return e.getMessage();
+        }
+    }
 }

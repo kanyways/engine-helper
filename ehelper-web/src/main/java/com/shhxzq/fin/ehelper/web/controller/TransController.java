@@ -78,4 +78,39 @@ public class TransController extends BaseController {
         return getPathRoot() + "/redeem-private";
     }
 
+    /**
+     * 申购
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "pay", method = RequestMethod.GET)
+    public String pay(Model model) {
+        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("01");
+        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+
+        model.addAttribute("beChannelConfs", beChannelConfs);
+        return getPathRoot() + "/pay";
+    }
+
+    /**
+     * 申购
+     *
+     * @param dto
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "pay", method = RequestMethod.POST)
+    public String pay(@ModelAttribute("dto") CommonTransDto dto, Model model) {
+        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("01");
+        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+        String result = remoteBankEngineService.pay(dto);
+
+        model.addAttribute("beChannelConfs", beChannelConfs);
+        model.addAttribute("result", result);
+        return getPathRoot() + "/pay";
+    }
+
 }

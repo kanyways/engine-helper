@@ -209,6 +209,10 @@ a {
     font-weight: 500;
 }
 
+.func-list {
+    height: 900px;
+}
+
 .func-list .func-item {
     width: 470px;
     height: 380px;
@@ -218,6 +222,7 @@ a {
     text-align: center;
     float: left;
     margin-right: 20px;
+    margin-top: 20px;
 }
 
 .func-list .func-item:last-child {

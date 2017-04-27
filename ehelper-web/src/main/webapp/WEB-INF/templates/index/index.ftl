@@ -14,6 +14,12 @@
         </a>
         <p>启动或停止dev的查询和对账引擎</p>
     </div>
+    <div class="func-item">
+        <a href="${ctx}/#trans">
+            <img src="${ctx}/static/app/images/trans.png"/>
+        </a>
+        <p>向dev发起各种交易</p>
+    </div>
 </div>
 </@override>
 

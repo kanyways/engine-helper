@@ -30,7 +30,7 @@
     </div>
 
     <div class="input-group">
-        <label>收款方账户名称(receiverAccountName):</label>
+        <label>收款方户名(receiverAccountName):</label>
         <input type="text" name="receiverAccountName" value="${receiverAccountName}" required/>
     </div>
 

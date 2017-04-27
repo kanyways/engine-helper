@@ -3,6 +3,12 @@
 <@override name="content">
 <div class="trans-list">
     <div class="item">
+        <a href="${ctx}/#trans/verify">
+            <img src="${ctx}/static/app/images/verify.png"/>
+            <p>鉴权(verify)</p>
+        </a>
+    </div>
+    <div class="item">
         <a href="${ctx}/#trans/pay">
             <img src="${ctx}/static/app/images/pay.png"/>
             <p>申购(pay)</p>
