@@ -76,7 +76,7 @@ public class RespController extends BaseController {
                 sql.append("\n\t('").append(bankNo).append("', '").append(row[0]).append("', '").append(row[1]).append("', '").append(row[2]).append("', '").append(merRespCo).append("', '").append(tranSt).append("', '', '', 'Y'),");
             });
         } catch (Exception e) {
-            return "excel数据不合法";
+            return "excel数据不合法，请按模板格式填写！";
         }
         sql.deleteCharAt(sql.lastIndexOf(","));
         sql.append(";");
