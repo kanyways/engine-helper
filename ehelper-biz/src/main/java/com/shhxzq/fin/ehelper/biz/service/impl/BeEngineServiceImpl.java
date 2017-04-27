@@ -1,6 +1,7 @@
 package com.shhxzq.fin.ehelper.biz.service.impl;
 
 import com.shhxzq.fin.ehelper.biz.service.BeEngineService;
+import com.shhxzq.fin.ehelper.model.annotation.CacheGetOrSave;
 import com.shhxzq.fin.ehelper.model.annotation.LogTime;
 import com.shhxzq.fin.ehelper.model.vo.BeEngine;
 import lombok.extern.log4j.Log4j2;
@@ -18,6 +19,7 @@ public class BeEngineServiceImpl extends BaseService<BeEngine> implements BeEngi
 
     @Override
     @LogTime
+    @CacheGetOrSave("engine:all")
     public List<BeEngine> findAllEngine() {
         return super.selectAll();
     }
