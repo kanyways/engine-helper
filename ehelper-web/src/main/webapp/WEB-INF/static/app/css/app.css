@@ -148,6 +148,10 @@ a {
     margin-top: 30px;
 }
 
+.hidden {
+    display: none;
+}
+
 .btn {
     display: inline-block;
     padding: 6px 12px;
@@ -168,6 +172,14 @@ a {
     border-color: #4cae4c;
 }
 
+.mt-20 {
+    margin-top: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
 .result {
     margin-top: 20px;
 }
@@ -182,4 +194,13 @@ a {
     border: 1px solid #999;
     border-radius: 4px;
     margin-top: 0;
+}
+
+.green {
+    color: green;
+}
+
+.ele-title {
+    font-size: 16px;
+    font-weight: 500;
 }
