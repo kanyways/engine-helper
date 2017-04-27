@@ -12,8 +12,6 @@ import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * @author kangyonggan
@@ -99,6 +97,37 @@ public class RemoteBankEngineService {
             return GsonUtil.format(JSONObject.toJSONString(response));
         } catch (Exception e) {
             log.warn("申购交易调用异常", e);
+            return e.getMessage();
+        }
+    }
+
+    /**
+     * 鉴权
+     *
+     * @param commonTransDto
+     * @return
+     */
+    public String verify(CommonTransDto commonTransDto) {
+        VerifyRequest request = new VerifyRequest();
+        try {
+            PropertyUtils.copyProperties(request, commonTransDto);
+        } catch (Exception e) {
+            log.warn("鉴权交易异常", e);
+            return e.getMessage();
+        }
+
+        // 设置那些固定的值
+        request.setIdType("0");//身份证（内部0, 会被翻译为1）
+        request.setAppKind("918");
+        request.setAccptmd(Accptmd.Mobile);
+
+        try {
+            VerifyResponse response = bankEngineService.verify(request);
+            log.info("响应信息:{}", response);
+
+            return GsonUtil.format(JSONObject.toJSONString(response));
+        } catch (Exception e) {
+            log.warn("鉴权交易调用异常", e);
             return e.getMessage();
         }
     }

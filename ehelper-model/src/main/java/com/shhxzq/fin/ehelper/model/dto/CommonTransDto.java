@@ -17,6 +17,21 @@ public class CommonTransDto {
     private String bankNo;
 
     /**
+     * 卡号
+     */
+    private String accountNo;
+
+    /**
+     * 户名
+     */
+    private String accountName;
+
+    /**
+     * 证件号
+     */
+    private String idNo;
+
+    /**
      * 付款方银行编号
      */
     private String senderBankNo;

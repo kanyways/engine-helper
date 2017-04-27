@@ -113,4 +113,39 @@ public class TransController extends BaseController {
         return getPathRoot() + "/pay";
     }
 
+    /**
+     * 鉴权
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "verify", method = RequestMethod.GET)
+    public String verify(Model model) {
+        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("63");
+        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+
+        model.addAttribute("beChannelConfs", beChannelConfs);
+        return getPathRoot() + "/verify";
+    }
+
+    /**
+     * 鉴权
+     *
+     * @param dto
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "verify", method = RequestMethod.POST)
+    public String verify(@ModelAttribute("dto") CommonTransDto dto, Model model) {
+        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("63");
+        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+        String result = remoteBankEngineService.verify(dto);
+
+        model.addAttribute("beChannelConfs", beChannelConfs);
+        model.addAttribute("result", result);
+        return getPathRoot() + "/verify";
+    }
+
 }
