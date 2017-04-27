@@ -16,7 +16,7 @@
     <button class="btn btn-success" data-loading-text="正在提交..."><@s.message "app.button.save"/></button>
 </form>
 
-<div class="width-48 pull-right mt-20 green">
+<div class="width-48 pull-right green">
     <div class="ele-title">使用说明：</div>
     <p>1. 下载错误码模板：<a href="${ctx}/download/错误码模板.xlsx" class="underline">错误码模板</a></p>
     <p>2. 把错误码填写到Excel中，不要修改模板结构，程序会从第二行开始读取。</p>
