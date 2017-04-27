@@ -61,6 +61,7 @@
     $(".form").submit(function () {
         $btn = $(this).find("button");
         $btn.text($btn.attr("data-loading-text")).attr("disabled", "disabled");
+        $(".result").addClass("hidden");
     });
 </script>
 
