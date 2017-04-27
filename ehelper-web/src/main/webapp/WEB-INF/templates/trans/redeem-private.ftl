@@ -1,4 +1,5 @@
 <#assign title="对私赎回"/>
+<#assign env = RequestParameters.env!'' />
 <#assign bankNo = RequestParameters.bankNo!'' />
 <#assign receiverBankNo = RequestParameters.receiverBankNo!'' />
 <#assign receiverAccountNo = RequestParameters.receiverAccountNo!'300113085110013' />
@@ -10,6 +11,15 @@
 <@override name="content">
 <form action="#trans/redeemPrivate" method="post" class="form">
     <div class="title">对私赎回交易(redeemPrivate)</div>
+
+    <div class="input-group">
+        <label>交易环境：</label>
+        <select name="env" required>
+            <option value="dev">dev环境</option>
+            <option value="uat" <#if env=='uat'>selected</#if>>uat环境</option>
+        </select>
+    </div>
+
     <div class="input-group">
         <label>银行通道(bankNo)：</label>
         <select name="bankNo" required>

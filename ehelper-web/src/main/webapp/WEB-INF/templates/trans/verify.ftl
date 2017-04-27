@@ -1,4 +1,5 @@
 <#assign title="鉴权"/>
+<#assign env = RequestParameters.env!'' />
 <#assign bankNo = RequestParameters.bankNo!'' />
 <#assign accountNo = RequestParameters.accountNo!'测试客户3006186035' />
 <#assign accountName = RequestParameters.accountName!'620522201000017606' />
@@ -8,6 +9,15 @@
 <@override name="content">
 <form action="#trans/verify" method="post" class="form">
     <div class="title">鉴权交易(verify)</div>
+
+    <div class="input-group">
+        <label>交易环境：</label>
+        <select name="env" required>
+            <option value="dev">dev环境</option>
+            <option value="uat" <#if env=='uat'>selected</#if>>uat环境</option>
+        </select>
+    </div>
+
     <div class="input-group">
         <label>银行通道(bankNo)：</label>
         <select name="bankNo" required>

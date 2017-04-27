@@ -21,8 +21,11 @@ import javax.annotation.Resource;
 @Log4j2
 public class RemoteBankEngineService {
 
-    @Resource
-    private BankEngineService bankEngineService;
+    @Resource(name = "bankEngineServiceDev")
+    private BankEngineService bankEngineServiceDev;
+
+    @Resource(name = "bankEngineServiceUat")
+    private BankEngineService bankEngineServiceUat;
 
     /**
      * 对私赎回
@@ -56,7 +59,12 @@ public class RemoteBankEngineService {
         request.setCapitalMode("H");
 
         try {
-            RedeemPrivateResponse response = bankEngineService.redeemPrivate(request);
+            RedeemPrivateResponse response;
+            if ("uat".equals(commonTransDto.getEnv())) {
+                response = bankEngineServiceUat.redeemPrivate(request);
+            } else {
+                response = bankEngineServiceDev.redeemPrivate(request);
+            }
             log.info("响应信息:{}", response);
 
             return GsonUtil.format(JSONObject.toJSONString(response));
@@ -91,7 +99,12 @@ public class RemoteBankEngineService {
         request.setAppKind("022");
 
         try {
-            PayResponse response = bankEngineService.pay(request);
+            PayResponse response;
+            if ("uat".equals(commonTransDto.getEnv())) {
+                response = bankEngineServiceUat.pay(request);
+            } else {
+                response = bankEngineServiceDev.pay(request);
+            }
             log.info("响应信息:{}", response);
 
             return GsonUtil.format(JSONObject.toJSONString(response));
@@ -122,7 +135,12 @@ public class RemoteBankEngineService {
         request.setAccptmd(Accptmd.Mobile);
 
         try {
-            VerifyResponse response = bankEngineService.verify(request);
+            VerifyResponse response;
+            if ("uat".equals(commonTransDto.getEnv())) {
+                response = bankEngineServiceUat.verify(request);
+            } else {
+                response = bankEngineServiceDev.verify(request);
+            }
             log.info("响应信息:{}", response);
 
             return GsonUtil.format(JSONObject.toJSONString(response));

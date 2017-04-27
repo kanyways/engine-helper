@@ -10,10 +10,15 @@
     <context:annotation-config/>
     <dubbo:application name="ENGINE_HELPER"/>
 
-    <dubbo:registry address="zookeeper://10.199.101.211:8080?backup=10.199.101.212:2181,10.199.101.213:2181"/>
+    <dubbo:registry id="dev_address" address="zookeeper://10.199.101.211:8080?backup=10.199.101.212:2181,10.199.101.213:2181"/>
+    <dubbo:registry id="uat_address" address="zookeeper://10.199.105.204:2181?backup=10.199.105.203:2181,10.199.105.202:2181" default="false"/>
 
-    <dubbo:reference id="bankEngineService" cluster="failfast"
+    <dubbo:reference id="bankEngineServiceDev" cluster="failfast"
                      interface="com.shhxzq.fin.bankengine.service.BankEngineService"
-                     lazy="true" version="1.2.0" check="false" timeout="100000"/>
+                     lazy="true" version="1.2.0" check="false" timeout="100000" registry="dev_address"/>
+
+    <dubbo:reference id="bankEngineServiceUat" cluster="failfast"
+                     interface="com.shhxzq.fin.bankengine.service.BankEngineService"
+                     lazy="true" version="1.2.0" check="false" timeout="100000" registry="uat_address"/>
 
 </beans>

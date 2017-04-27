@@ -86,4 +86,9 @@ public class CommonTransDto {
      */
     private BigDecimal amount;
 
+    /**
+     * 交易环境, {dev, uat}
+     */
+    private String env;
+
 }

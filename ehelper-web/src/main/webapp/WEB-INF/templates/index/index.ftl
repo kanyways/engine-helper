@@ -18,7 +18,7 @@
         <a href="${ctx}/#trans">
             <img src="${ctx}/static/app/images/trans.png"/>
         </a>
-        <p>向dev发起各种交易</p>
+        <p>向dev或uat发起各种交易</p>
     </div>
 </div>
 </@override>

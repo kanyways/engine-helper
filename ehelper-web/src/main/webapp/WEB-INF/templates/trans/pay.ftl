@@ -1,4 +1,5 @@
 <#assign title="申购"/>
+<#assign env = RequestParameters.env!'' />
 <#assign bankNo = RequestParameters.bankNo!'' />
 <#assign senderAccountName = RequestParameters.senderAccountName!'测试客户3006186035' />
 <#assign senderAccountNo = RequestParameters.senderAccountNo!'620522201000017606' />
@@ -9,6 +10,15 @@
 <@override name="content">
 <form action="#trans/pay" method="post" class="form">
     <div class="title">申购交易(pay)</div>
+
+    <div class="input-group">
+        <label>交易环境：</label>
+        <select name="env" required>
+            <option value="dev">dev环境</option>
+            <option value="uat" <#if env=='uat'>selected</#if>>uat环境</option>
+        </select>
+    </div>
+
     <div class="input-group">
         <label>银行通道(bankNo)：</label>
         <select name="bankNo" required>
