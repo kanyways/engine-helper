@@ -5,6 +5,7 @@
 <#assign senderAccountNo = RequestParameters.senderAccountNo!'620522201000017606' />
 <#assign senderIdNo = RequestParameters.senderIdNo!'320681198511254646' />
 <#assign mobileNo = RequestParameters.mobileNo!'13851903765' />
+<#assign senderProtocolNo = RequestParameters.mobileNo!'20161111100004229413' />
 <#assign amount = RequestParameters.amount!'0.05' />
 
 <@override name="content">
@@ -41,6 +42,11 @@
     <div class="input-group">
         <label>出款方证件号(senderIdNo):</label>
         <input type="text" name="senderIdNo" value="${senderIdNo}" required/>
+    </div>
+
+    <div class="input-group">
+        <label>协议号(senderProtocolNo):</label>
+        <input type="text" name="senderIdNo" value="${senderProtocolNo}" required/>
     </div>
 
     <div class="input-group">

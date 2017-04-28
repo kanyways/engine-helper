@@ -57,6 +57,11 @@ public class CommonTransDto {
     private String mobileNo;
 
     /**
+     * 协议号
+     */
+    private String senderProtocolNo;
+
+    /**
      * 收款方银行编号
      */
     private String receiverBankNo;
