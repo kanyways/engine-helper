@@ -53,7 +53,7 @@
     <aop:config>
         <!--切点，用于事务-->
         <aop:pointcut id="transactionPointcut"
-                      expression="execution(* com.shhxzq.fin.ehelper.biz.service.impl..*.*(..))"/>
+                      expression="execution(* com.shhxzq.fin.ehelper.biz.service.impl.transaction..*.*(..))"/>
 
         <!--事物切面-->
         <aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice"/>
