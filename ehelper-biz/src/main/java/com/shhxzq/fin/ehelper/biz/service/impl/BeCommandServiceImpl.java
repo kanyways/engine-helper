@@ -1,7 +1,6 @@
 package com.shhxzq.fin.ehelper.biz.service.impl;
 
 import com.shhxzq.fin.ehelper.biz.service.BeCommandService;
-import com.shhxzq.fin.ehelper.biz.util.MultiDataSource;
 import com.shhxzq.fin.ehelper.model.annotation.DataSourceSwitch;
 import com.shhxzq.fin.ehelper.model.annotation.LogTime;
 import com.shhxzq.fin.ehelper.model.constants.DataSource;
@@ -19,7 +18,6 @@ public class BeCommandServiceImpl extends BaseService<BeCommand> implements BeCo
     @LogTime
     @DataSourceSwitch
     public BeCommand findBeCommandBySerialNo(DataSource dataSource, String serialNo) {
-        MultiDataSource.setDataSource(dataSource);
         BeCommand beCommand = new BeCommand();
         beCommand.setSerialNo(serialNo);
 
