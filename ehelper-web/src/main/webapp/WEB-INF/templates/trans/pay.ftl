@@ -5,7 +5,7 @@
 <#assign senderAccountNo = RequestParameters.senderAccountNo!'620522201000017606' />
 <#assign senderIdNo = RequestParameters.senderIdNo!'320681198511254646' />
 <#assign mobileNo = RequestParameters.mobileNo!'13851903765' />
-<#assign senderProtocolNo = RequestParameters.mobileNo!'20161111100004229413' />
+<#assign senderProtocolNo = RequestParameters.senderProtocolNo!'20161111100004229413' />
 <#assign amount = RequestParameters.amount!'0.05' />
 
 <@override name="content">
