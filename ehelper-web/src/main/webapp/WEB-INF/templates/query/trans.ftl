@@ -3,7 +3,7 @@
 <#assign serialNo = RequestParameters.serialNo!'' />
 
 <@override name="content">
-<form action="#query/trans" method="get" class="form">
+<form action="#query/trans" method="POST" class="form">
     <div class="title">交易查询</div>
 
     <div class="input-group">
@@ -33,6 +33,8 @@
     $(".form").submit(function () {
         $btn = $(this).find("button");
         $btn.text($btn.attr("data-loading-text")).attr("disabled", "disabled");
+
+        $(".result").addClass("hidden");
     });
 </script>
 

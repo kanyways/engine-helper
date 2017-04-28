@@ -3,8 +3,8 @@ package com.shhxzq.fin.ehelper.web.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.shhxzq.fin.ehelper.biz.service.BeCommandService;
 import com.shhxzq.fin.ehelper.common.GsonUtil;
+import com.shhxzq.fin.ehelper.model.constants.DataSource;
 import com.shhxzq.fin.ehelper.model.vo.BeCommand;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,16 +26,26 @@ public class QueryController extends BaseController {
     /**
      * 交易查询
      *
-     * @param serialNo
-     * @param model
      * @return
      */
     @RequestMapping(value = "trans", method = RequestMethod.GET)
-    public String trans(@RequestParam(value = "serialNo", required = false, defaultValue = "") String serialNo, Model model) {
-        if (StringUtils.isNotEmpty(serialNo)) {
-            BeCommand beCommand = beCommandService.findBeCommandBySerialNo(serialNo);
-            model.addAttribute("result", GsonUtil.format(JSONObject.toJSONString(beCommand)));
-        }
+    public String trans() {
+        return getPathRoot() + "/trans";
+    }
+
+    /**
+     * 交易查询
+     *
+     * @param serialNo
+     * @param env
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "trans", method = RequestMethod.POST)
+    public String trans(@RequestParam(value = "serialNo", required = false, defaultValue = "") String serialNo,
+                        @RequestParam(value = "env", required = false, defaultValue = "dev") String env, Model model) {
+        BeCommand beCommand = beCommandService.findBeCommandBySerialNo(DataSource.getDataSource(env), serialNo);
+        model.addAttribute("result", GsonUtil.format(JSONObject.toJSONString(beCommand)));
 
         return getPathRoot() + "/trans";
     }
