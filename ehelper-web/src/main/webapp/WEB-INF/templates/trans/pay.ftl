@@ -46,7 +46,7 @@
 
     <div class="input-group">
         <label>协议号(senderProtocolNo):</label>
-        <input type="text" name="senderIdNo" value="${senderProtocolNo}" required/>
+        <input type="text" name="senderProtocolNo" value="${senderProtocolNo}" required/>
     </div>
 
     <div class="input-group">
