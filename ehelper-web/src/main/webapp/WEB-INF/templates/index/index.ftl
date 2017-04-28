@@ -20,6 +20,12 @@
         </a>
         <p>向dev或uat发起各种交易</p>
     </div>
+    <div class="func-item">
+        <a href="${ctx}/#query/trans">
+            <img src="${ctx}/static/app/images/queryTrans.png"/>
+        </a>
+        <p>查询dev或uat发起各种交易</p>
+    </div>
 </div>
 </@override>
 
