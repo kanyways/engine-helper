@@ -24,6 +24,10 @@
 <p>
     6. 更多功能，比如一键切换到模拟器或银行测试环境等，敬请期待！
 </p>
+
+<p>
+    7. 前端除了freemarker模板之外没使用其他框架，所以表单没有严格校验，建议使用chrome浏览器（支持H5validate）
+</p>
 </@override>
 
 <@extends name="../content-layout.ftl"/>
