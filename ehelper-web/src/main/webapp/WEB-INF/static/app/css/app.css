@@ -199,11 +199,11 @@ a {
 }
 
 .green {
-    color: green;
+    color: green !important;
 }
 
 .red {
-    color: red;
+    color: red !important;
 }
 
 .underline {
