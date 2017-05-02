@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shhxzq.fin.ehelper.mapper.BeSimulatorTransactionMapper">
+    <resultMap id="BaseResultMap" type="com.shhxzq.fin.ehelper.model.vo.BeSimulatorTransaction">
+        <!--
+          WARNING - @mbggenerated
+        -->
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="be_ser" property="beSer" jdbcType="VARCHAR"/>
+        <result column="bs_ser" property="bsSer" jdbcType="VARCHAR"/>
+        <result column="mer_id" property="merId" jdbcType="VARCHAR"/>
+        <result column="bank_no" property="bankNo" jdbcType="VARCHAR"/>
+        <result column="acco_no" property="accoNo" jdbcType="VARCHAR"/>
+        <result column="trans_type" property="transType" jdbcType="VARCHAR"/>
+        <result column="amount" property="amount" jdbcType="VARCHAR"/>
+        <result column="resp_code" property="respCode" jdbcType="VARCHAR"/>
+        <result column="trans_stat" property="transStat" jdbcType="VARCHAR"/>
+        <result column="stat" property="stat" jdbcType="VARCHAR"/>
+        <result column="work_day" property="workDay" jdbcType="VARCHAR"/>
+        <result column="send_time" property="sendTime" jdbcType="VARCHAR"/>
+        <result column="id_delete" property="idDelete" jdbcType="TINYINT"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="created_date" property="createdDate" jdbcType="VARCHAR"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+        <result column="protocolNo" property="protocolno" jdbcType="VARCHAR"/>
+        <result column="memo1" property="memo1" jdbcType="VARCHAR"/>
+        <result column="memo2" property="memo2" jdbcType="VARCHAR"/>
+        <result column="idNum" property="idnum" jdbcType="VARCHAR"/>
+    </resultMap>
+</mapper>

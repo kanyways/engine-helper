@@ -11,6 +11,7 @@
         <select name="env" required>
             <option value="dev">dev环境</option>
             <option value="uat" <#if env=='uat'>selected</#if>>uat环境</option>
+            <option value="sim" <#if env=='sim'>selected</#if>>sim模拟器</option>
         </select>
     </div>
 

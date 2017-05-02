@@ -5,7 +5,7 @@ package com.shhxzq.fin.ehelper.model.constants;
  * @since 4/28/17
  */
 public enum DataSource {
-    DEV, UAT;
+    DEV, UAT, SIM;
 
     public static DataSource getDataSource(String name) {
         for (DataSource dataSource : DataSource.values()) {

@@ -1,7 +1,6 @@
 package com.shhxzq.fin.ehelper.biz.service;
 
 import com.shhxzq.fin.ehelper.model.constants.DataSource;
-import com.shhxzq.fin.ehelper.model.vo.BeCommand;
 
 /**
  * @author kangyonggan
@@ -16,6 +15,6 @@ public interface BeCommandService {
      * @param serialNo
      * @return
      */
-    BeCommand findBeCommandBySerialNo(DataSource dataSource, String serialNo);
+    String findResultBySerialNo(DataSource dataSource, String serialNo);
 
 }

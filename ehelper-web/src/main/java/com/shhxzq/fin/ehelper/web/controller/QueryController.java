@@ -1,10 +1,7 @@
 package com.shhxzq.fin.ehelper.web.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.shhxzq.fin.ehelper.biz.service.BeCommandService;
-import com.shhxzq.fin.ehelper.common.GsonUtil;
 import com.shhxzq.fin.ehelper.model.constants.DataSource;
-import com.shhxzq.fin.ehelper.model.vo.BeCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,9 +41,7 @@ public class QueryController extends BaseController {
     @RequestMapping(value = "trans", method = RequestMethod.POST)
     public String trans(@RequestParam(value = "serialNo", required = false, defaultValue = "") String serialNo,
                         @RequestParam(value = "env", required = false, defaultValue = "dev") String env, Model model) {
-        BeCommand beCommand = beCommandService.findBeCommandBySerialNo(DataSource.getDataSource(env), serialNo);
-        model.addAttribute("result", GsonUtil.format(JSONObject.toJSONString(beCommand)));
-
+        model.addAttribute("result", beCommandService.findResultBySerialNo(DataSource.getDataSource(env), serialNo));
         return getPathRoot() + "/trans";
     }
 

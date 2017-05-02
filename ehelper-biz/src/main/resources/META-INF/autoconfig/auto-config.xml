@@ -24,6 +24,9 @@
         <property name="ehelper.jdbc.url.uat" description="jdbc地址-uat" defaultValue="jdbc:mysql://10.199.105.111:3306/be_uat?useUnicode=true&amp;amp;characterEncoding=UTF-8"/>
         <property name="ehelper.jdbc.username.uat" description="jdbc用户名-uat" defaultValue="querycheck"/>
         <property name="ehelper.jdbc.password.uat" description="jdbc密码-uat" defaultValue="querycheck"/>
+        <property name="ehelper.jdbc.url.sim" description="jdbc地址-sim" defaultValue="jdbc:mysql://10.199.105.111:3306/pentos?useUnicode=true&amp;amp;characterEncoding=UTF-8"/>
+        <property name="ehelper.jdbc.username.sim" description="jdbc用户名-sim" defaultValue="pentos"/>
+        <property name="ehelper.jdbc.password.sim" description="jdbc密码-sim" defaultValue="pentos"/>
 
         <!--mail-->
         <property name="ehelper.mail.host" description="邮件服务器地址" defaultValue="smtp.163.com"/>
