@@ -2,6 +2,7 @@ package com.shhxzq.fin.ehelper.biz.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.shhxzq.fin.ehelper.biz.service.BeCommandService;
+import com.shhxzq.fin.ehelper.biz.service.impl.transaction.BaseService;
 import com.shhxzq.fin.ehelper.common.GsonUtil;
 import com.shhxzq.fin.ehelper.mapper.BeSimulatorTransactionMapper;
 import com.shhxzq.fin.ehelper.model.annotation.DataSourceSwitch;

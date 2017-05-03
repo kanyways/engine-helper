@@ -1,4 +1,4 @@
-package com.shhxzq.fin.ehelper.biz.service.impl;
+package com.shhxzq.fin.ehelper.biz.service.impl.transaction;
 
 import com.shhxzq.fin.ehelper.biz.service.MailService;
 import com.shhxzq.fin.ehelper.biz.util.PropertiesUtil;

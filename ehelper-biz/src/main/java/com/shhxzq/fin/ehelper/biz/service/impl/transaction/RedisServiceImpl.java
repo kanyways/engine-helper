@@ -1,4 +1,4 @@
-package com.shhxzq.fin.ehelper.biz.service.impl;
+package com.shhxzq.fin.ehelper.biz.service.impl.transaction;
 
 import com.shhxzq.fin.ehelper.biz.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
