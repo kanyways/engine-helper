@@ -82,6 +82,11 @@ public class CommonTransDto {
     private String receiverAccountName;
 
     /**
+     * 收款方证件类型
+     */
+    private String receiverIdType;
+
+    /**
      * 收款方证件号
      */
     private String receiverIdNo;

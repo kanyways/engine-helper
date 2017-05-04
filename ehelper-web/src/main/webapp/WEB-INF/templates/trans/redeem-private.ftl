@@ -4,6 +4,7 @@
 <#assign receiverBankNo = RequestParameters.receiverBankNo!'' />
 <#assign receiverAccountNo = RequestParameters.receiverAccountNo!'300113085110013' />
 <#assign receiverAccountName = RequestParameters.receiverAccountName!'测试客户3001130851' />
+<#assign receiverIdType = RequestParameters.receiverIdType!'0' />
 <#assign receiverIdNo = RequestParameters.receiverIdNo!'620111198506020014' />
 <#assign routeCode = RequestParameters.routeCode!'' />
 <#assign amount = RequestParameters.amount!'0.03' />
@@ -46,6 +47,11 @@
     <div class="input-group">
         <label>收款方户名(receiverAccountName):</label>
         <input type="text" name="receiverAccountName" value="${receiverAccountName}" required/>
+    </div>
+
+    <div class="input-group">
+        <label>收款方证件类型(receiverIdType):</label>
+        <input type="text" name="receiverIdType" value="${receiverIdType}" required/>
     </div>
 
     <div class="input-group">

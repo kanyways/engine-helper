@@ -50,7 +50,7 @@ public class RemoteBankEngineService {
         request.setProductType(null);
         request.setCurrency("156");
         request.setAppKind("952");
-        request.setReceiverIdType("0");
+//        request.setReceiverIdType("0");
         request.setReceiverCity("");
         request.setHuiLu("");
         request.setRefAppNo(DateUtil.getCurrentFullDateTime());
