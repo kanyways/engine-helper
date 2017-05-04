@@ -2,10 +2,8 @@ package com.shhxzq.fin.ehelper.web.controller;
 
 import com.shhxzq.fin.ehelper.biz.service.BeChannelConfService;
 import com.shhxzq.fin.ehelper.biz.service.BeTranService;
-import com.shhxzq.fin.ehelper.common.Collections3;
 import com.shhxzq.fin.ehelper.model.dto.CommonTransDto;
 import com.shhxzq.fin.ehelper.model.vo.BeChannelConf;
-import com.shhxzq.fin.ehelper.model.vo.BeTran;
 import com.shhxzq.fin.ehelper.remote.RemoteBankEngineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,7 +49,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "redeemPrivate", method = RequestMethod.GET)
     public String redeemPrivate(Model model) {
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findRedeemBeChannelConfs();
 
         model.addAttribute("beChannelConfs", beChannelConfs);
         return getPathRoot() + "/redeem-private";
@@ -66,7 +64,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "redeemPrivate", method = RequestMethod.POST)
     public String redeemPrivate(@ModelAttribute("dto") CommonTransDto dto, Model model) {
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findRedeemBeChannelConfs();
         String result = remoteBankEngineService.redeemPrivate(dto);
 
         model.addAttribute("beChannelConfs", beChannelConfs);
@@ -82,7 +80,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "pay", method = RequestMethod.GET)
     public String pay(Model model) {
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findPayBeChannelConfs();
 
         model.addAttribute("beChannelConfs", beChannelConfs);
         return getPathRoot() + "/pay";
@@ -97,7 +95,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "pay", method = RequestMethod.POST)
     public String pay(@ModelAttribute("dto") CommonTransDto dto, Model model) {
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findPayBeChannelConfs();
         String result = remoteBankEngineService.pay(dto);
 
         model.addAttribute("beChannelConfs", beChannelConfs);
@@ -113,7 +111,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "verify", method = RequestMethod.GET)
     public String verify(Model model) {
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findVerifyBeChannelConfs();
 
         model.addAttribute("beChannelConfs", beChannelConfs);
         return getPathRoot() + "/verify";
@@ -128,7 +126,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "verify", method = RequestMethod.POST)
     public String verify(@ModelAttribute("dto") CommonTransDto dto, Model model) {
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findVerifyBeChannelConfs();
         String result = remoteBankEngineService.verify(dto);
 
         model.addAttribute("beChannelConfs", beChannelConfs);

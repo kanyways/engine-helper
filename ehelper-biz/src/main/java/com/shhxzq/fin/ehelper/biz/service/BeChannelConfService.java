@@ -19,10 +19,24 @@ public interface BeChannelConfService {
     List<BeChannelConf> findBeChannelConfByBnkNos(List<String> bnkNos);
 
     /**
-     * 查询所有的银行通道
+     * 查找支持对私赎回的通道
      *
      * @return
      */
-    List<BeChannelConf> findAllBeChannelConfs();
+    List<BeChannelConf> findRedeemBeChannelConfs();
+
+    /**
+     * 查找支持支付的通道
+     *
+     * @return
+     */
+    List<BeChannelConf> findPayBeChannelConfs();
+
+    /**
+     * 查找支持鉴权的通道
+     *
+     * @return
+     */
+    List<BeChannelConf> findVerifyBeChannelConfs();
 
 }

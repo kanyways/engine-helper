@@ -90,7 +90,7 @@ public class RemoteBankEngineService {
         }
 
         // 设置那些固定的值
-        request.setSenderIdType("0");//身份证
+//        request.setSenderIdType("0");//身份证
 //        request.setSenderProtocolNo("20161111100004229413");
         request.setAccpTmd(Accptmd.Mobile.getValue());
         request.setRefAppNo(DateUtil.getCurrentFullDateTime());

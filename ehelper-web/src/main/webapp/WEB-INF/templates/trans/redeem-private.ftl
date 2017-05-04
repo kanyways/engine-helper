@@ -31,7 +31,11 @@
 
     <div class="input-group">
         <label>收款方银行编号(receiverBankNo):</label>
-        <input type="text" name="receiverBankNo" value="${receiverBankNo}" required/>
+        <select name="receiverBankNo" required>
+            <#list beChannelConfs as channelConf>
+                <option value="${channelConf.bankNo}" <#if receiverBankNo==channelConf.bankNo>selected</#if>>${channelConf.routeName}(${channelConf.bankNo})</option>
+            </#list>
+        </select>
     </div>
 
     <div class="input-group">

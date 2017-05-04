@@ -28,11 +28,35 @@ public class BeChannelConfServiceImpl extends BaseService<BeChannelConf> impleme
 
     @Override
     @LogTime
-    @CacheGetOrSave("channelConf:all")
-    public List<BeChannelConf> findAllBeChannelConfs() {
+    @CacheGetOrSave("channelConf:redeem")
+    public List<BeChannelConf> findRedeemBeChannelConfs() {
         Example example = new Example(BeChannelConf.class);
+        example.createCriteria().andEqualTo("fastCash", "01");
 
         example.setOrderByClause("id desc");
         return super.selectByExample(example);
     }
+
+    @Override
+    @LogTime
+    @CacheGetOrSave("channelConf:pay")
+    public List<BeChannelConf> findPayBeChannelConfs() {
+        Example example = new Example(BeChannelConf.class);
+        example.createCriteria().andEqualTo("appRecharge", "01");
+
+        example.setOrderByClause("id desc");
+        return super.selectByExample(example);
+    }
+
+    @Override
+    @LogTime
+    @CacheGetOrSave("channelConf:verify")
+    public List<BeChannelConf> findVerifyBeChannelConfs() {
+        Example example = new Example(BeChannelConf.class);
+        example.createCriteria().andEqualTo("mAddCard", "01");
+
+        example.setOrderByClause("id desc");
+        return super.selectByExample(example);
+    }
+
 }
