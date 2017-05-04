@@ -18,4 +18,11 @@ public interface BeChannelConfService {
      */
     List<BeChannelConf> findBeChannelConfByBnkNos(List<String> bnkNos);
 
+    /**
+     * 查询所有的银行通道
+     *
+     * @return
+     */
+    List<BeChannelConf> findAllBeChannelConfs();
+
 }

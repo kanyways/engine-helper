@@ -51,9 +51,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "redeemPrivate", method = RequestMethod.GET)
     public String redeemPrivate(Model model) {
-        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("29");
-        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
 
         model.addAttribute("beChannelConfs", beChannelConfs);
         return getPathRoot() + "/redeem-private";
@@ -68,9 +66,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "redeemPrivate", method = RequestMethod.POST)
     public String redeemPrivate(@ModelAttribute("dto") CommonTransDto dto, Model model) {
-        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("29");
-        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
         String result = remoteBankEngineService.redeemPrivate(dto);
 
         model.addAttribute("beChannelConfs", beChannelConfs);
@@ -86,9 +82,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "pay", method = RequestMethod.GET)
     public String pay(Model model) {
-        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("01");
-        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
 
         model.addAttribute("beChannelConfs", beChannelConfs);
         return getPathRoot() + "/pay";
@@ -103,9 +97,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "pay", method = RequestMethod.POST)
     public String pay(@ModelAttribute("dto") CommonTransDto dto, Model model) {
-        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("01");
-        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
         String result = remoteBankEngineService.pay(dto);
 
         model.addAttribute("beChannelConfs", beChannelConfs);
@@ -121,9 +113,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "verify", method = RequestMethod.GET)
     public String verify(Model model) {
-        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("63");
-        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
 
         model.addAttribute("beChannelConfs", beChannelConfs);
         return getPathRoot() + "/verify";
@@ -138,9 +128,7 @@ public class TransController extends BaseController {
      */
     @RequestMapping(value = "verify", method = RequestMethod.POST)
     public String verify(@ModelAttribute("dto") CommonTransDto dto, Model model) {
-        List<BeTran> beTrans = beTranService.findBeTransByMerTranCo("63");
-        List<String> bnkNos = Collections3.extractToList(beTrans, "bnkNo");
-        List<BeChannelConf> beChannelConfs = beChannelConfService.findBeChannelConfByBnkNos(bnkNos);
+        List<BeChannelConf> beChannelConfs = beChannelConfService.findAllBeChannelConfs();
         String result = remoteBankEngineService.verify(dto);
 
         model.addAttribute("beChannelConfs", beChannelConfs);
