@@ -3,7 +3,7 @@
 <#assign bankNo = RequestParameters.bankNo!'' />
 <#assign senderAccountName = RequestParameters.senderAccountName!'测试客户3006186035' />
 <#assign senderAccountNo = RequestParameters.senderAccountNo!'620522201000017606' />
-<#assign senderIdTp = RequestParameters.senderIdTp!'0' />
+<#assign senderIdType = RequestParameters.senderIdType!'0' />
 <#assign senderIdNo = RequestParameters.senderIdNo!'320681198511254646' />
 <#assign mobileNo = RequestParameters.mobileNo!'13851903765' />
 <#assign senderProtocolNo = RequestParameters.senderProtocolNo!'20161111100004229413' />
@@ -41,8 +41,8 @@
     </div>
 
     <div class="input-group">
-        <label>出款方证件类型(senderIdTp):</label>
-        <input type="text" name="senderIdTp" value="${senderIdTp}" required/>
+        <label>出款方证件类型(senderIdType):</label>
+        <input type="text" name="senderIdType" value="${senderIdType}" required/>
     </div>
 
     <div class="input-group">

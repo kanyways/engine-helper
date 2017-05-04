@@ -47,6 +47,11 @@ public class CommonTransDto {
     private String senderAccountName;
 
     /**
+     * 付款方证件类型
+     */
+    private String senderIdType;
+
+    /**
      * 付款方证件号
      */
     private String senderIdNo;
